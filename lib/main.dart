@@ -38,13 +38,16 @@ class _FadingTextAnimationState extends State<FadingTextAnimation> {
         title: const Text('Fading Text Animation'),
       ),
       body: Center(
-        child: AnimatedOpacity(
-          opacity: _isVisible ? 1.0 : 0.0,
-          duration: const Duration(seconds: 1),
-          curve: Curves.easeInOut,
-          child: const Text(
-            'Hello, Flutter!',
-            style: TextStyle(fontSize: 24),
+        child: GestureDetector(
+          onTap: toggleVisibility, 
+          child: AnimatedOpacity(
+            opacity: _isVisible ? 1.0 : 0.0,
+            duration: const Duration(seconds: 1),
+            curve: Curves.easeInOut, 
+            child: const Text(
+              'Hello, Flutter!',
+              style: TextStyle(fontSize: 24),
+            ),
           ),
         ),
       ),
